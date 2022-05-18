@@ -7,16 +7,17 @@
       <title>Calendify | Responsive Bootstrap 4 Admin Dashboard Template</title>
       
       <!-- Favicon -->
-      <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+      <link rel="shortcut icon" href="assets/images/favicon.ico" />
       
-      <link rel="stylesheet" href="../assets/css/backend.min.css?v=1.0.1">
-      <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-      <link rel="stylesheet" href="../assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
-      <link rel="stylesheet" href="../assets/vendor/remixicon/fonts/remixicon.css">    <!-- Fullcalender CSS -->
-    <link rel='stylesheet' href='../assets/vendor/fullcalendar/core/main.css' />
-    <link rel='stylesheet' href='../assets/vendor/fullcalendar/daygrid/main.css' />
-    <link rel='stylesheet' href='../assets/vendor/fullcalendar/timegrid/main.css' />
-    <link rel='stylesheet' href='../assets/vendor/fullcalendar/list/main.css' />
+      <link rel="stylesheet" href="assets/css/backend.min.css?v=1.0.1">
+      <link rel="stylesheet" href="assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+      <link rel="stylesheet" href="assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+      <link rel="stylesheet" href="assets/vendor/remixicon/fonts/remixicon.css">    <!-- Fullcalender CSS -->
+    <link rel='stylesheet' href='assets/vendor/fullcalendar/core/main.css' />
+    <link rel='stylesheet' href='assets/vendor/fullcalendar/daygrid/main.css' />
+    <link rel='stylesheet' href='assets/vendor/fullcalendar/timegrid/main.css' />
+    <link rel='stylesheet' href='assets/vendor/fullcalendar/list/main.css' />
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body class="fixed-top-navbar top-nav  ">
     <!-- loader Start -->
@@ -121,142 +122,356 @@
                 </div>
             </div>
         </div>
-      <div class="content-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h4 class="mt-3 mb-3">My Schedules</h4>
+        <div class="content-page">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="card card-block card-stretch">
-                            <div class="card-body">
-                                <div id="calendar1" class="calendar-s"></div>
+                        <h4 class="mt-3 mb-3">My Schedules</h4>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card card-block card-stretch">
+                                    <div class="card-body">
+                                        <div id="calendar1" class="calendar-s"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="date-event" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="popup text-left">
-                        <h4 class="mb-3">Add Schedule</h4>
-                        <hr>
-                        <form action="/" id="submit-schedule">
-                            <div class="content create-workform row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="form-label" for="schedule-title">Schedule For: <strong>8 April 2022</strong></label>
-                                        <input class="form-control" placeholder="Nama Pasien" type="text" required />
-                                        <a href="#" class="btn btn-outline-primary">Buka Daftar Pasien</a>
+            <!-- Modal Add Schedule -->
+            <div class="modal fade" id="date-event" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="popup text-left">
+                                <h4 class="mb-3">Add Schedule</h4>
+                                <hr>
+                                <form class="schedule" action="/" id="submit-schedule">
+                                    <div class="content create-workform row">
+                                        <div class="col-md-12">
+                                            <p>Schedule for: <strong>8 April 2022</strong></p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="form-label mb-0 absolute" for="">Nama Pasien</label>
+                                                <input class="form-control" value="John Doe" type="text" required />
+                                                <a href="#" class="btn btn-outline-primary btn-pasien">Buka Daftar Pasien</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">No. Rekam Medis</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">No. Telepon</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">Diagnosis</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">Rencana Tindakan</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">Waktu Operasi</label>
+                                                <span class="las la-clock float-right"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">Perkiraan Durasi Operasi</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group mt-2 custom-control custom-checkbox">
+                                                <label for="">Data Checklist Pre-Operasi</label>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="pemeriksaan-lab">
+                                                    <label class="custom-control-label" for="pemeriksaan-lab">Pemeriksaan Lab</label>
+                                                </div>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="pemeriksaan-radiologi">
+                                                    <label class="custom-control-label" for="pemeriksaan-radiologi">Pemeriksaan Radiologi</label>
+                                                </div>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="alat">
+                                                    <label class="custom-control-label" for="alat">ACC Implant/Alat</label>
+                                                </div>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="dokumen">
+                                                    <label class="custom-control-label" for="dokumen">Dokumen Administrasi</label>
+                                                    <input type="file" name="" id="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group mt-2 row custom-control custom-checkbox">
+                                                <div class="col-12">
+                                                    <label for="">Konsultasi Dokter</label>
+                                                </div>
+                                                
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="internist">
+                                                    <label class="custom-control-label" for="internist">Internist</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="jantung">
+                                                    <label class="custom-control-label" for="jantung">Jantung</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="paru">
+                                                    <label class="custom-control-label" for="paru">Paru</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="anestesi">
+                                                    <label class="custom-control-label" for="anestesi">Anestesi</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="anak">
+                                                    <label class="custom-control-label" for="anak">Anak</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="rehab-medis">
+                                                    <label class="custom-control-label" for="rehab-medis">Rehab Medis</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="saraf">
+                                                    <label class="custom-control-label" for="saraf">Saraf</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-12 mt-4">
+                                            <hr>
+                                            <div class="d-flex flex-wrap align-items-ceter justify-content-center">
+                                                <button class="btn mr-4 btn-outline-primary" data-dismiss="modal">Cancel</button>
+                                                <button class="btn btn-primary" type="submit">Save</button>
+                                            </div>
+                                        </div>  
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="No. Rekam Medis" type="text" required />
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="No. Telepon" type="text" required />
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Diagnosis" type="text" required />
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Rencana Tindakan" type="text" required />
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Waktu Operasi" type="text" required />
-                                        <span class="las la-clock float-right"></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Perkiraan Durasi Operasi" type="text" required />
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="">Data Checklist Pre-Operasi</label>
-                                        <div class="inp-group">
-                                            <input type="checkbox" name="" id="pemeriksaan-lab">
-                                            <label for="pemeriksaan-lab">Pemeriksaan Lab</label>
-                                        </div>
-                                        <div class="inp-group">
-                                            <input type="checkbox" name="" id="pemeriksaan-radiologi">
-                                            <label for="pemeriksaan-radiologi">Pemeriksaan Radiologi</label>
-                                        </div>
-                                        <div class="inp-group">
-                                            <input type="checkbox" name="" id="alat">
-                                            <label for="alat">ACC Implant/Alat</label>
-                                        </div>
-                                        <div class="inp-group">
-                                            <input type="checkbox" name="" id="dokumen">
-                                            <label for="dokumen">Dokumen Administrasi</label>
-                                            <input type="file" name="" id="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="">Konsultasi Dokter</label>
-                                        <div class="inp-group">
-                                            <input type="checkbox" name="" id="internist">
-                                            <label for="internist">Internist</label>
-                                        </div>
-                                        <div class="inp-group">
-                                            <input type="checkbox" name="" id="jantung">
-                                            <label for="jantung">Jantung</label>
-                                        </div>
-                                        <div class="inp-group">
-                                            <input type="checkbox" name="" id="paru">
-                                            <label for="paru">Paru</label>
-                                        </div>
-                                        <div class="inp-group">
-                                            <input type="checkbox" name="" id="anestesi">
-                                            <label for="anestesi">Anestesi</label>
-                                        </div>
-                                        <div class="inp-group">
-                                            <input type="checkbox" name="" id="anak">
-                                            <label for="anak">Anak</label>
-                                        </div>
-                                        <div class="inp-group">
-                                            <input type="checkbox" name="" id="rehab-medis">
-                                            <label for="rehab-medis">Rehab Medis</label>
-                                        </div>
-                                        <div class="inp-group">
-                                            <input type="checkbox" name="" id="saraf">
-                                            <label for="saraf">Saraf</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-12 mt-4">
-                                    <hr>
-                                    <div class="d-flex flex-wrap align-items-ceter justify-content-center">
-                                        <button class="btn mr-4 btn-outline-primary" data-dismiss="modal">Cancel</button>
-                                        <button class="btn btn-primary" type="submit">Save</button>
-                                    </div>
-                                </div>  
+                                </form>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Modal Detail Schedule -->
+            <div class="modal fade" id="detail-event" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="popup text-left">
+                                <h4 class="mb-3">Schedule Detail</h4>
+                                <hr>
+                                <form class="schedule" action="/" id="submit-schedule">
+                                    <div class="content create-workform row">
+                                        <div class="col-md-12">
+                                            <p>Schedule for: <strong>8 April 2022</strong></p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group filled">
+                                                <label class="form-label mb-0 absolute" for="">Nama Pasien</label>
+                                                <input class="form-control" value="John Doe" type="text" required />
+                                                <a href="#" class="btn btn-outline-primary btn-pasien">Buka Daftar Pasien</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group filled">
+                                                <input class="form-control" value="57374593" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">No. Rekam Medis</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group filled">
+                                                <input class="form-control" value="08123456789" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">No. Telepon</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="form-label small mb-0" for="">Pemeriksaan Radiologi</label>
+                                                <div class="input-file">
+                                                    <input type="file" name="" id="">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group filled">
+                                                <input class="form-control" value="Usus Buntu" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">Diagnosis</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group filled">
+                                                <input class="form-control" value="Operasi Usus Buntu" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">Rencana Tindakan</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group filled">
+                                                <input class="form-control" value="10.00 WIB" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">Waktu Operasi</label>
+                                                <span class="las la-clock float-right"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group filled">
+                                                <input class="form-control" value="3 jam" type="text" required />
+                                                <label class="form-label mb-0 absolute" for="">Perkiraan Durasi Operasi</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group mt-2 custom-control custom-checkbox">
+                                                <label for="">Data Checklist Pre-Operasi</label>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input" type="checkbox" checked name="" id="pemeriksaan-lab">
+                                                    <label class="custom-control-label" for="pemeriksaan-lab">Pemeriksaan Lab</label>
+                                                </div>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input" type="checkbox" checked name="" id="pemeriksaan-radiologi">
+                                                    <label class="custom-control-label" for="pemeriksaan-radiologi">Pemeriksaan Radiologi</label>
+                                                </div>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="alat">
+                                                    <label class="custom-control-label" for="alat">ACC Implant/Alat</label>
+                                                </div>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="dokumen">
+                                                    <label class="custom-control-label" for="dokumen">Dokumen Administrasi</label>
+                                                    <div class="input-file">
+                                                        <input type="file" name="" id="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group mt-2 row custom-control custom-checkbox">
+                                                <div class="col-12">
+                                                    <label for="">Konsultasi Dokter</label>
+                                                </div>
+                                                
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" checked type="checkbox" name="" id="internist">
+                                                    <label class="custom-control-label" for="internist">Internist</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="jantung">
+                                                    <label class="custom-control-label" for="jantung">Jantung</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="paru">
+                                                    <label class="custom-control-label" for="paru">Paru</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" checked type="checkbox" name="" id="anestesi">
+                                                    <label class="custom-control-label" for="anestesi">Anestesi</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="anak">
+                                                    <label class="custom-control-label" for="anak">Anak</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="rehab-medis">
+                                                    <label class="custom-control-label" for="rehab-medis">Rehab Medis</label>
+                                                </div>
+                                                <div class="inp-group col-6">
+                                                    <input class="custom-control-input" type="checkbox" name="" id="saraf">
+                                                    <label class="custom-control-label" for="saraf">Saraf</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-12 mt-4">
+                                            <hr>
+                                            <div class="d-flex flex-wrap align-items-ceter justify-content-center">
+                                                <button class="btn mr-4 btn-outline-primary" data-dismiss="modal">Edit Status</button>
+                                                <button class="btn btn-primary" type="submit">Save</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Operasi -->
+            <div class="modal show fade" id="detail-event" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="popup text-left">
+                                <h4 class="mb-3">Status Operasi</h4>
+                                <hr>
+                                <form class="schedule" action="/" id="submit-schedule">
+                                    <div class="content create-workform row">
+                                        <div class="col-md-12">
+                                            <p>Berikut adalah status operasi Bp. <strong>John Doe</strong> <br>pada tanggal <strong>8 April 2022</strong></p>
+                                        </div>
+                                        
+                                        <div class="col-md-12">
+                                            <div class="form-group mt-2 custom-control custom-radio custom-radio-color-checked">
+                                                <label for="">Status Operasi</label>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input bg-success" checked type="radio" name="status" id="berhasil">
+                                                    <label class="custom-control-label" for="berhasil">Berhasil</label>
+                                                </div>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input bg-warning" type="radio" name="status" id="ditunda">
+                                                    <label class="custom-control-label" for="ditunda">Ditunda</label>
+                                                </div>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input bg-primary" type="radio" name="status" id="berlangsung">
+                                                    <label class="custom-control-label" for="berlangsung">Sedang Berlangsung</label>
+                                                </div>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input bg-danger" type="radio" name="status" id="dirujuk">
+                                                    <label class="custom-control-label" for="dirujuk">Gagal dan Dirujuk ke RS Lain</label>
+                                                </div>
+                                                <div class="inp-group">
+                                                    <input class="custom-control-input bg-dark" type="radio" name="status" id="gagal">
+                                                    <label class="custom-control-label" for="gagal">Gagal</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="" class="small mb-0">Catatan</label>
+                                            <p>Operasi berjalan dengan lancar dan pasien dijadwalkan untuk kontrol pada tanggal 14 April 2022</p>
+                                        </div>
+                                        
+                                        <div class="col-md-12">
+                                            <hr>
+                                            <div class="d-flex flex-wrap align-items-ceter justify-content-center">
+                                                <button class="btn mr-4 btn-outline-primary" data-dismiss="modal">Cancel</button>
+                                                <button class="btn btn-primary" type="submit">Save</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>    
-      </div>
     </div>
     
 
@@ -277,18 +492,18 @@
         </div>
     </footer>
     <!-- Backend Bundle JavaScript -->
-    <script src="../assets/js/backend-bundle.min.js"></script>
+    <script src="assets/js/backend-bundle.min.js"></script>
     
     <!-- Chart Custom JavaScript -->
-    <script src="../assets/js/customizer.js"></script>
+    <script src="assets/js/customizer.js"></script>
     
     <!-- Fullcalender Javascript -->
-    <script src='../assets/vendor/fullcalendar/core/main.js'></script>
-    <script src='../assets/vendor/fullcalendar/daygrid/main.js'></script>
-    <script src='../assets/vendor/fullcalendar/timegrid/main.js'></script>
-    <script src='../assets/vendor/fullcalendar/list/main.js'></script>
-    <script src='../assets/vendor/fullcalendar/interaction/main.js'></script>
+    <script src='assets/vendor/fullcalendar/core/main.js'></script>
+    <script src='assets/vendor/fullcalendar/daygrid/main.js'></script>
+    <script src='assets/vendor/fullcalendar/timegrid/main.js'></script>
+    <script src='assets/vendor/fullcalendar/list/main.js'></script>
+    <script src='assets/vendor/fullcalendar/interaction/main.js'></script>
     
     <!-- app JavaScript -->
-    <script src="../assets/js/app.js"></script>  </body>
+    <script src="assets/js/app.js"></script>  </body>
 </html>

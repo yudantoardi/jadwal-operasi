@@ -688,4 +688,27 @@ Index Of Script
        $(".file-upload").trigger('click');
     });
 
+
+    /*LABEL*/
+    
+    $("form.schedule input.form-control").on("blur input focus", function() {
+        var $field = $(this).closest(".form-group");
+        if (this.value) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+    
+    $("form.schedule input.form-control").on("focus", function() {
+        var $field = $(this).closest(".form-group");
+        if (this) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+    
+
+
 })(jQuery);
